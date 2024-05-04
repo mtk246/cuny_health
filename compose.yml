@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: "cuny_health_app"
+    networks:
+      - server
+    ports:
+      - "7800:4800"
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+networks:
+  server:
+    external: true
